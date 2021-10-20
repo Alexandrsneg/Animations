@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Animations</string>
+    <string name="animating_image">Animating image</string>
 </resources>

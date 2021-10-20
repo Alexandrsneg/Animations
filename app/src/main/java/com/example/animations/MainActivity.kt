@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnGoToAuth: Button
     private lateinit var btnSharedElements: Button
     private lateinit var btnGoToLottieActivity: Button
+    private lateinit var btnGoToMotionActivity: Button
 
 
     private lateinit var img1: ImageView
@@ -57,6 +58,7 @@ class MainActivity : AppCompatActivity() {
         btnGoToAuth = findViewById(R.id.btnGoToAuth)
         btnSharedElements = findViewById(R.id.btnSharedElements)
         btnGoToLottieActivity = findViewById(R.id.btnGoToLottie)
+        btnGoToMotionActivity = findViewById(R.id.btnGoToMotion)
 
 
         translate = TranslateAnimation(0F,200F, 0F, 200F)
@@ -136,6 +138,10 @@ class MainActivity : AppCompatActivity() {
 
         btnGoToLottieActivity.setOnClickListener {
             startActivity(Intent(this, LottieActivity::class.java))
+        }
+
+        btnGoToMotionActivity.setOnClickListener {
+            startActivity(Intent(this, MotionLayoutActivity::class.java))
         }
 
 
