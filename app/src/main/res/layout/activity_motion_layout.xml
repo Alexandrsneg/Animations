@@ -4,20 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MotionLayoutActivity"
-    app:layoutDescription="@xml/activity_motion_layout_scene">
+    android:rotationY="-9"
+    app:layoutDescription="@xml/activity_motion_layout_scene"
+    tools:context=".MotionLayoutActivity">
 
 
     <androidx.constraintlayout.utils.widget.ImageFilterView
         android:id="@+id/animatedImage"
         android:layout_width="200dp"
         android:layout_height="150dp"
-        android:src="@drawable/scorp_big"
         android:contentDescription="@string/animating_image"
-        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/scorp_big"
+        app:altSrc="@drawable/ermac"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:overlay="false" />
 
 
 </androidx.constraintlayout.motion.widget.MotionLayout>

@@ -49,10 +49,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="start animation utils anims"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btnGoToAuth" />
 
     <Button
         android:id="@+id/btnBackGround"
@@ -78,11 +77,11 @@
         android:id="@+id/btnGoToScene"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="176dp"
+        android:layout_marginTop="8dp"
         android:text="Go To Scene Transitions"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/img2" />
 
     <Button
         android:id="@+id/btnGoToAuth"
