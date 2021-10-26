@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:motion="http://schemas.android.com/apk/res-auto">
 
-    <Transition android:id="@+id/transition"
+    <Transition android:id="@+id/transition1"
         app:constraintSetStart="@+id/start"
         app:constraintSetEnd="@+id/end"
         app:duration="2000"
@@ -66,22 +66,18 @@
                 app:customFloatValue="1" />
         </Constraint>
     </ConstraintSet>
-    <ConstraintSet android:id="@+id/newCS" >
+    <ConstraintSet android:id="@+id/finalSet" >
         <Constraint
-            app:layout_constraintVertical_bias="1.0"
-            android:layout_height="150dp"
+            android:layout_height="100dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_width="200dp"
+            android:layout_width="132dp"
             android:id="@+id/animatedImage" />
     </ConstraintSet>
     <Transition
+        android:id="@+id/finalTransition"
         app:constraintSetStart="@+id/end"
-        app:constraintSetEnd="@+id/newCS" >
-        <OnSwipe app:dragDirection="dragLeft" />
-    </Transition>
+        app:constraintSetEnd="@+id/finalSet"
+        app:autoTransition="animateToEnd" />
 
 </MotionScene>
