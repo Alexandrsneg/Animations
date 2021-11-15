@@ -19,7 +19,7 @@ class LottieActivity : AppCompatActivity() {
         lottieView = findViewById(R.id.lavLottieView)
         btnPlay = findViewById(R.id.btnPlay)
         lottieView.progress = 0F
-        lottieView.setAnimationFromJson(jsonString, null)
+//        lottieView.setAnimationFromJson(jsonString, null)
         btnPlay.setOnClickListener {
             Log.d("PROGRESS prog :", lottieView.progress.toString())
             Log.d("PROGRESS speed :", lottieView.speed.toString())
