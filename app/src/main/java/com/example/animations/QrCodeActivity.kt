@@ -7,18 +7,25 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.FrameLayout
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
-import com.google.zxing.BarcodeFormat
-import com.google.zxing.EncodeHintType
+import com.google.zxing.*
 import com.google.zxing.qrcode.QRCodeWriter
+import com.google.zxing.common.HybridBinarizer
+
+import android.graphics.BitmapFactory
+
+
+
+
 
 class QrCodeActivity : AppCompatActivity() {
 
     private lateinit var btnScan: Button
     private lateinit var ivCode: ImageView
+    private lateinit var tvDecodedCode: TextView
 
     private val activityResultLauncher = registerForActivityResult(
             ActivityResultContracts.RequestPermission()){ isGranted ->
@@ -36,12 +43,20 @@ class QrCodeActivity : AppCompatActivity() {
 
         btnScan = findViewById(R.id.btnScan)
         ivCode = findViewById(R.id.ivCode)
+        tvDecodedCode = findViewById(R.id.tvDecodedCode)
 
         btnScan.setOnClickListener {
             activityResultLauncher.launch(Manifest.permission.CAMERA)
         }
 
         ivCode.setImageBitmap(getQrCodeBitmap("https://www.kaspersky.com"))
+
+        val icon = BitmapFactory.decodeResource(
+            this.resources,
+            R.drawable.screenshot
+        )
+
+        decodeFromBitmap(icon)
 
 
     }
@@ -58,5 +73,30 @@ class QrCodeActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    fun decodeFromBitmap(bitmap: Bitmap){
+        val width = bitmap.width
+        val height = bitmap.height
+        val pixels = IntArray(width * height)
+        bitmap.getPixels(pixels, 0, width, 0, 0, width, height)
+
+        val source = RGBLuminanceSource(width, height, pixels)
+
+        val binaryBitmap = BinaryBitmap(HybridBinarizer(source))
+
+        val reader: Reader = MultiFormatReader()
+        var result: Result? = null
+        try {
+            result = reader.decode(binaryBitmap)
+        } catch (e: NotFoundException) {
+            e.printStackTrace()
+        } catch (e: ChecksumException) {
+            e.printStackTrace()
+        } catch (e: FormatException) {
+            e.printStackTrace()
+        }
+        val text: String = result?.getText() ?: "ppc"
+        tvDecodedCode.text = " CONTENT1111: $text"
     }
 }
