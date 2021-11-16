@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnSharedElements: Button
     private lateinit var btnGoToLottieActivity: Button
     private lateinit var btnGoToMotionActivity: Button
+    private lateinit var btnGoToQrCodeActivity: Button
 
 
     private lateinit var img1: ImageView
@@ -59,6 +60,7 @@ class MainActivity : AppCompatActivity() {
         btnSharedElements = findViewById(R.id.btnSharedElements)
         btnGoToLottieActivity = findViewById(R.id.btnGoToLottie)
         btnGoToMotionActivity = findViewById(R.id.btnGoToMotion)
+        btnGoToQrCodeActivity = findViewById(R.id.btnGoToQr)
 
 
         translate = TranslateAnimation(0F,200F, 0F, 200F)
@@ -142,6 +144,10 @@ class MainActivity : AppCompatActivity() {
 
         btnGoToMotionActivity.setOnClickListener {
             startActivity(Intent(this, MotionLayoutActivity::class.java))
+        }
+
+        btnGoToQrCodeActivity.setOnClickListener {
+            startActivity(Intent(this, QrCodeActivity::class.java))
         }
 
 

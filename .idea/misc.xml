@@ -13,6 +13,8 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_motion_layout.xml" value="0.23703703703703705" />
         <entry key="app/src/main/res/layout/activity_placeholder.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_qr_code.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_scan.xml" value="0.2942708333333333" />
         <entry key="app/src/main/res/layout/activity_second.xml" value="0.30833333333333335" />
         <entry key="app/src/main/res/layout/activity_shared_elements.xml" value="0.30833333333333335" />
         <entry key="app/src/main/res/layout/activity_transition_scene.xml" value="0.30833333333333335" />
